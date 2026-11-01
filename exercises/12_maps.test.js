@@ -9,8 +9,8 @@ test("12_maps-2: can use objects as a key", () => {
   const user = { name: "Aaron" };
   const value = { twitter: "@js_dev", gplus: "+AaronFrost" };
 
-  // Crea un mapa anomenat 'myMap'
-  // Afegeix una nova entrada. Utilitza user com a clau i value com a valor
+  const myMap = new Map();
+  myMap.set(user, value);
 
   expect(myMap.has(user)).toBe(true);
   expect(myMap.get(user)).toBe(value);
