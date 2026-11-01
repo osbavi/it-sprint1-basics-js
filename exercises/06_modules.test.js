@@ -31,7 +31,6 @@ test("06_modules-4: can specify what to import, to only retain pieces of the imp
 });
 
 test("06_modules-5: can import from my node_modules", () => {
-  // Importa un mòdul des de node_modules i comprova que funciona
   expect(lodash.isEmpty([])).toBe(true);
 });
 
