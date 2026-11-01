@@ -42,11 +42,10 @@ test("27_callbacks-3: Callbacks in asynchronous functions - wait and greet", (do
 }, 3000); // Timeout del test de 3 segons
 
 test("27_callbacks-4: Callbacks with arrays - process elements", () => {
-  // Crea una funció 'processElements' que accepti un array i un callback
-  // La funció ha d'invocar el callback per cada element de l'array
-
-  const processElements = (/* AFEGEIX PARÀMETRES AQUÍ */) => {
-    /* INTRODUEIX EL TEU CODI AQUÍ */
+  const processElements = (array, callback) => {
+    for (let i = 0; i < array.length; i++) {
+      callback(array[i]);
+    }
   };
 
   const elements = ["a", "b", "c"];
