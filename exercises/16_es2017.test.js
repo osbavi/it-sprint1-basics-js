@@ -73,7 +73,7 @@ test("16_es2017-4: Object.entries gives an array of arrays as [key, value]", () 
       "Joe West",
     ],
   };
-  // obté un array [key, value] de l'objecte show
+  const result = Object.entries(show);
   expect(result).toEqual([
     ["title", "The Flash"],
     ["seasons", 2.2],
