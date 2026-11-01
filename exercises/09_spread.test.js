@@ -14,9 +14,9 @@ test("09_spread-1: should be able to call a function and spread the arguments", 
 });
 
 test("09_spread-2: should be easier to concatenate arrays", () => {
-  // Crea un segon array amb els valors `[4, 5, 6]` i utilitza l'operador spread (`...`) per concatenar-lo amb `array1`.
   const array1 = [1, 2, 3];
-
+  const array2 = [4, 5, 6];
+  const result = [...array1, ...array2];
   expect(result).toEqual([1, 2, 3, 4, 5, 6]);
 });
 
