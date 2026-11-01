@@ -16,10 +16,8 @@ test("01_scope-2: can modify the value of a `let` variable even in the next bloc
 
 test("01_scope-3: cannot modify the value of a `const` variable", () => {
   function getReleaseName() {
-    // Tria el teu costat. Li dius ES6 o ES2015?
-    // No pots utilitzar `const` i reasignar el valor!
-    const releaseName = "ES6"; // Si li dius ES2015, canvia això a let o var
-    releaseName = "ES2015"; // Si li dius ES6, elimina aquesta reasignació
+    let releaseName = "ES6";
+    releaseName = "ES2015";
     return releaseName;
   }
   expect(getReleaseName).not.toThrow();
