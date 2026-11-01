@@ -40,7 +40,6 @@ test("14_promises-3: errors can be caught", () => {
       throw new Error("aquest bloc no s'hauria d'executar");
     })
     .catch((error) => {
-      // comprova el missatge de l’error capturat
-      expect(error.message).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */);
+      expect(error.message).toBe("out of apples");
     });
 });
