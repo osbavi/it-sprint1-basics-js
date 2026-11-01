@@ -43,11 +43,9 @@ test("26_arrays-5: Filter, multiply and sum array values", () => {
 test("26_arrays-6: Every and Some - check if elements are greater than 10", () => {
   const numbers = [11, 12, 13, 14];
 
-  // Utilitza every per comprovar si TOTS els elements són > 10
-  const allGreaterThan10 = null; // INTRODUEIX EL TEU CODI AQUÍ
+  const allGreaterThan10 = numbers.every((val) => val > 10);
 
-  // Utilitza some per comprovar si ALGUN element és > 10
-  const someGreaterThan10 = null; // INTRODUEIX EL TEU CODI AQUÍ
+  const someGreaterThan10 = numbers.some((val) => val > 10);
 
   expect(allGreaterThan10).toBe(true);
   expect(someGreaterThan10).toBe(true);
