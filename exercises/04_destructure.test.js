@@ -37,8 +37,8 @@ test("04_destructure-3: can be used to pull apart objects", () => {
 });
 
 test("04_destructure-4: sets missing values to undefined", () => {
-  // Utilitzant desestructuració, intenta extreure una propietat anomenada `address` de l'objecte retornat per `getAddress()`.
-  // Com que aquesta propietat no existeix, el seu valor serà `undefined`.
+  const { address } = getAddress();
+
   expect(address).toBeUndefined();
 });
 
