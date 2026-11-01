@@ -11,10 +11,9 @@ test("08_parameters-2: aren't included in arguments", () => {
     return arguments.length;
   };
 
-  // Comprova que els paràmetres per defecte no formen part de l'objecte `arguments`
-  expect(getName("Aaron")).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(getName(null)).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(getName()).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
+  expect(getName("Aaron")).toBe(1);
+  expect(getName(null)).toBe(1);
+  expect(getName()).toBe(0);
 });
 
 test("08_parameters-3: can trigger a function call", () => {
