@@ -15,7 +15,9 @@ test("15_async-await-1: should work with resolved promises", async () => {
 });
 
 test("15_async-await-2: should throw an error with a rejected promise", async () => {
-  return doAsync(true).catch((error) => {
+  try {
+    await doAsync(true);
+  } catch (error) {
     expect(error).toBe("rejected");
-  });
+  }
 });
