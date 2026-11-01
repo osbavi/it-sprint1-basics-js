@@ -6,7 +6,7 @@ test("03_new-apis-1: should be easier to determine whether a string includes ano
 
 test("03_new-apis-2: should be easier to repeat a string", () => {
   const repeated = "abc123";
-  // crea una variable anomenada `result` que sigui el resultat de repetir la cadena 4 vegades
+  const result = repeated.repeat(4);
   expect(result).toBe("abc123abc123abc123abc123");
 });
 
