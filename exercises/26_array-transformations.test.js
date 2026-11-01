@@ -17,11 +17,9 @@ test("26_arrays-2: Filter - create an array with only even numbers", () => {
 test("26_arrays-3: Find - find the first number greater than 10", () => {
   const numbers = [1, 10, 8, 11];
 
-  // Utilitza `find()` per trobar el primer número més gran que 10.
-  const result =
-    /* INTRODUEIX EL TEU CODI AQUÍ */
+  const result = numbers.find((num) => num > 10);
 
-    expect(result).toBe(11);
+  expect(result).toBe(11);
 });
 
 test("26_arrays-4: Reduce - calculate the total sum of numbers", () => {
