@@ -11,8 +11,7 @@ test("16_es2016-2: array.includes can be used to determine whether an item exist
     { name: "Sam Saccone" },
     { name: "Ingvar Stepanyan" },
   ];
-  // refactoritza  amb `includes`
-  const result = greatFriends.indexOf(bestFriend) !== -1;
+  const result = greatFriends.includes(bestFriend);
   expect(result).toBe(true);
 });
 
