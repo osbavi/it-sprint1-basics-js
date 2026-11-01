@@ -93,8 +93,6 @@ test("16_es2017-4: Object.entries gives an array of arrays as [key, value]", () 
 });
 
 test("16_es2017-5: Trailing commas in function parameter lists and calls help us with git", () => {
-  // com que això és una cosa de sintaxi, ho posarem dins d'una cadena i utilitzarem `eval` per assegurar-nos
-  // que tinguis la sintaxi correcta :)
   expect(`
     function foo(
       a,
@@ -113,7 +111,7 @@ test("16_es2017-5: Trailing commas in function parameter lists and calls help us
     function bar(
       a,
       b,
-      ...rest,
+      ...rest
     ) {
       log(a, b, ...rest)
     }
