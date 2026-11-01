@@ -10,14 +10,10 @@ test("02_arrow-1: pot substituir funcions tradicionals", () => {
 
 test("02_arrow-2: pot substituir funcions tradicionals #2", () => {
   const nums = [2, 5, 10];
-
-  //El següent codi ja funciona correctament i el test ja passa.
-  //Refactoritza la funció utilitzant una funció fletxa per simplificar-lo, assegurant-te que el test segueix passant.
-  //Pista: una funció fletxa amb una sola expressió pot ometre les claus i el `return`.
-
-  const squares = nums.map(function (num) {
+  const squaresOriginal = nums.map(function (num) {
     return num * num;
   });
+  const squares = nums.map((num) => num * num);
 
   expect(squares.shift()).toBe(4);
   expect(squares.shift()).toBe(25);
