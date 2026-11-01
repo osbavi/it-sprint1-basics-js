@@ -40,12 +40,9 @@ test("01_scope-5: can't redeclare using the same name", () => {
 });
 
 test("01_scope-6: means that we can start using block statements", () => {
-  // BLOC DE CODI
   {
-    // Canvia a una declaració `const`
-    var d = 2;
+    const d = 2;
   }
-
   expect(() => noop("d", d)).toThrow("d is not defined");
 });
 
