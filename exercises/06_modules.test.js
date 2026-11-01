@@ -24,8 +24,6 @@ test("06_modules-2: can import from my node_modules", () => {
 });
 
 test("06_modules-3: can import Mathy", () => {
-  // El mòdul Mathy està importat amb `import * as Mathy`, el que significa que totes les seves funcions es troben dins de l'objecte `Mathy`.
-  // Per això podem accedir a la funció amb `Mathy.add`, i comprovar que el test ja passa.
   expect(Mathy.add(1, 2)).toBe(3);
 });
 
