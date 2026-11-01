@@ -50,9 +50,7 @@ test("03_new-apis-5: should be easy to copy properties from one object to anothe
     p: ["x", "y", "z"],
   };
 
-  //Combina les fonts dins d'un nou objecte utilitzant Object.assign.
-  //Tingues en compte que Object.assign fa una còpia superficial (shallow copy), així que les propietats internes seran sobrescrites, no fusionades.
-
+  const result = Object.assign({}, target, source1, source2, source3);
   expect(result).toEqual({
     a: {
       b: "c",
@@ -63,7 +61,6 @@ test("03_new-apis-5: should be easy to copy properties from one object to anothe
     p: ["a", "b", "c"],
   });
 
-  // això només és aquí per indicar que l'assignació no és profunda
   expect(result).not.toEqual({
     a: {
       b: "c",
