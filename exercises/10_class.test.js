@@ -89,9 +89,20 @@ test("10_class-5: can extend another class", () => {
 });
 
 test("10_class-6: can use property setters and getters", () => {
-  // Crea una classe Animal (no passis el nom al constructor)
-  // Afegeix un setter per a la propietat name
-  // Afegeix un getter per a la propietat name
+  class Animal {
+    #name;
+    constructor() {
+      this.#name = "";
+    }
+
+    get name() {
+      return this.#name;
+    }
+
+    set name(value) {
+      this.#name = `${value} type of animal`;
+    }
+  }
 
   const animal = new Animal();
   animal.name = "Dog";
