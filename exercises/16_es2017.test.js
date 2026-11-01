@@ -23,7 +23,7 @@ test("16_es2017-1: String.prototype.padStart saves us from left-pad-gate", () =>
 
 test("16_es2017-2: String.prototype.padEnd (and padStart) can be given a string to pad with", () => {
   const originalString = "Stronger Together";
-  // crida a padEnd en aquesta cadena per fer que el test passi
+  const result = originalString.padEnd(27, "-123");
   expect(result).toBe("Stronger Together-123-123-1");
 });
 
