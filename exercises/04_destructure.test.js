@@ -43,7 +43,7 @@ test("04_destructure-4: sets missing values to undefined", () => {
 });
 
 test("04_destructure-5: can alias destructured variables", () => {
-  // Utilitzant desestructuració, crida `getAddress()` i extreu 'city', 'state' i 'zip', i assigna'ls els àlies c, s, z, respectivament.
+  const { city: c, state: s, zip: z } = getAddress();
 
   expect(c).toBe("Salt Lake City");
   expect(s).toBe("UT");
