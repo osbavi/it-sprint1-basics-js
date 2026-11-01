@@ -59,12 +59,9 @@ test("27_callbacks-4: Callbacks with arrays - process elements", () => {
 });
 
 test("27_callbacks-5: Process string with callback - transform to uppercase", (done) => {
-  // Crea una funció 'processString' que accepti una cadena i un callback
-  // La funció ha de convertir la cadena a majúscules i després invocar el callback
-  // amb la cadena transformada
-
-  const processString = (/* AFEGEIX PARÀMETRES AQUÍ */) => {
-    /* INTRODUEIX EL TEU CODI AQUÍ */
+  const processString = (str, callback) => {
+    const transformed = str.toUpperCase();
+    callback(transformed);
   };
 
   processString("hola món", (transformedString) => {
