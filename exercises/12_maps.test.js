@@ -19,7 +19,7 @@ test("12_maps-2: can use objects as a key", () => {
 test(`12_maps-3: doesn't coerce keys`, () => {
   const myMap = new Map();
   myMap.set(1, "Aaron");
-  expect(myMap.get("1")).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
+  expect(myMap.get("1")).toBe(undefined);
   myMap.set("1", "Aaron");
-  expect(myMap.get("1")).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
+  expect(myMap.get("1")).toBe("Aaron");
 });
