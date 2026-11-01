@@ -9,11 +9,9 @@ test("26_arrays-1: Map - create an array with the square of each number", () => 
 test("26_arrays-2: Filter - create an array with only even numbers", () => {
   const numbers = [1, 2, 3, 4];
 
-  // Utilitza `filter()` per crear una nova array només amb els números parells.
-  const evenNumbers =
-    /* INTRODUEIX EL TEU CODI AQUÍ */
+  const evenNumbers = numbers.filter((num) => num % 2 === 0);
 
-    expect(evenNumbers).toEqual([2, 4]);
+  expect(evenNumbers).toEqual([2, 4]);
 });
 
 test("26_arrays-3: Find - find the first number greater than 10", () => {
