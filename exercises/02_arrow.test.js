@@ -21,15 +21,10 @@ test("02_arrow-2: pot substituir funcions tradicionals #2", () => {
 });
 
 test("02_arrow-3: lliga `this` a l'àmbit d'avaluació, no a l'àmbit d'execució", () => {
-  // Modifica l'objecte 'person'. Una de les funcions hauria de convertir-se en una funció fletxa
-  // per permetre que 'this' mantingui el context correctament
-
   const person = {
     name: "Aaron",
     greetFriends: function (friends) {
-      return friends.map(function (friend) {
-        return this.name + " saluda a " + friend;
-      });
+      return friends.map((friend) => this.name + " saluda a " + friend);
     },
   };
 
