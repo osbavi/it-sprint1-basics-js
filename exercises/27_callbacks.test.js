@@ -13,11 +13,8 @@ test("27_callbacks-1: Basic callback - invoke callback passing a number", () => 
 });
 
 test("27_callbacks-2: Callbacks with mathematical operations - calculator", () => {
-  // Crea una funció 'calculator' que accepti dos números i una funció callback
-  // La funció ha d'invocar el callback amb els dos números com a paràmetres
-
-  const calculator = (/* AFEGEIX PARÀMETRES AQUÍ */) => {
-    /* INTRODUEIX EL TEU CODI AQUÍ */
+  const calculator = (num1, num2, callback) => {
+    return callback(num1, num2);
   };
 
   const sum = (a, b) => a + b;
