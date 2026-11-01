@@ -48,11 +48,10 @@ test("01_scope-6: means that we can start using block statements", () => {
 
 //////// EXTRA CREDIT ////////
 
-test.skip("01_scope-7: means that we can declare constant with the same name in block statement", () => {
-  // Declara una 'd' utilitzant 'const', assignant-li el valor 5
-  // BLOC DE CODI
+test("01_scope-7: means that we can declare constant with the same name in block statement", () => {
+  const d = 5;
   {
-    // Declara una 'd' utilitzant 'const', assignant-li el valor 10
+    const d = 10;
     expect(d).toBe(10);
   }
   expect(d).toBe(5);
