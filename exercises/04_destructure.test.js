@@ -29,7 +29,7 @@ test("04_destructure-2: sets missing values to undefined", () => {
 });
 
 test("04_destructure-3: can be used to pull apart objects", () => {
-  // Utilitzant desestructuració, crida `getAddress()` i crea les variables 'city', 'state' i 'zip'.
+  const { city, state, zip } = getAddress();
 
   expect(city).toBe("Salt Lake City");
   expect(state).toBe("UT");
