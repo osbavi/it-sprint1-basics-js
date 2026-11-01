@@ -27,7 +27,15 @@ test("10_class-2: constructor can have default param values", () => {
 });
 
 test("10_class-3: can have instance methods", () => {
-  // Crea una classe Animal, passa el nom al constructor i afegeix una funció sayName a la definició de la classe
+  class Animal {
+    constructor(name = "Honey Badger") {
+      this.name = name;
+    }
+
+    sayName() {
+      return `My name is: ${this.name}`;
+    }
+  }
 
   const animal = new Animal();
 
