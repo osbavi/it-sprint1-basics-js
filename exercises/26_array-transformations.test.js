@@ -33,15 +33,11 @@ test("26_arrays-4: Reduce - calculate the total sum of numbers", () => {
 test("26_arrays-5: Filter, multiply and sum array values", () => {
   const numbers = [1, 3, 7, 10, 15, 17, 11, 5, 8, 12, 9];
 
-  // Crea una única expressió utilitzant `filter()`, `map()` i `reduce()` que:
-  // - filtri els números majors o iguals a 10
-  // - multipliqui cada número per 2
-  // - sumi tots els resultats
-
-  const result =
-    /* INTRODUEIX EL TEU CODI AQUÍ */
-
-    expect(result).toBe(130); // // (10*2 + 15*2 + 17*2 + 11*2 + 12*2)
+  const result = numbers
+    .filter((num) => num >= 10)
+    .map((num) => num * 2)
+    .reduce((accumulator, val) => accumulator + val, 0);
+  expect(result).toBe(130);
 });
 
 test("26_arrays-6: Every and Some - check if elements are greater than 10", () => {
