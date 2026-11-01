@@ -24,11 +24,10 @@ test("27_callbacks-2: Callbacks with mathematical operations - calculator", () =
 });
 
 test("27_callbacks-3: Callbacks in asynchronous functions - wait and greet", (done) => {
-  // Crea una funció 'waitAndGreet' que accepti un nom i un callback
-  // La funció ha d'esperar 2 segons (usa setTimeout) i després invocar el callback amb el nom
-
-  const waitAndGreet = (/* AFEGEIX PARÀMETRES AQUÍ */) => {
-    /* INTRODUEIX EL TEU CODI AQUÍ */
+  const waitAndGreet = (name, callback) => {
+    setTimeout(() => {
+      callback(name);
+    }, 2000);
   };
 
   const startTime = Date.now();
