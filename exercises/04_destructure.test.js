@@ -62,7 +62,7 @@ test("04_destructure-6: can destructure nested variables", () => {
 });
 
 test("04_destructure-7: can be used to pull apart arrays", () => {
-  // Crida a getNumbers i extreu el primer valor com `one` i el segon com `two`.
+  const [one, two] = getNumbers();
 
   expect(one).toBe(1);
   expect(two).toBe(2);
