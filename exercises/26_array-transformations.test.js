@@ -25,11 +25,9 @@ test("26_arrays-3: Find - find the first number greater than 10", () => {
 test("26_arrays-4: Reduce - calculate the total sum of numbers", () => {
   const numbers = [13, 7, 8, 21];
 
-  // Utilitza `reduce()` per calcular la suma total dels números de l’array.
-  const sum =
-    /* INTRODUEIX EL TEU CODI AQUÍ */
+  const sum = numbers.reduce((accumulator, val) => accumulator + val, 0);
 
-    expect(sum).toBe(49);
+  expect(sum).toBe(49);
 });
 
 test("26_arrays-5: Filter, multiply and sum array values", () => {
