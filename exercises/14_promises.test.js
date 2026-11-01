@@ -29,8 +29,7 @@ test("14_promises-2: should reject", () => {
       throw new Error("aquest bloc no s'hauria d'executar");
     },
     (error) => {
-      // comprova el missatge de l’error rebutjat
-      expect(error.message).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */);
+      expect(error.message).toBe("unripe apple");
     },
   );
 });
