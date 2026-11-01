@@ -12,8 +12,7 @@ test("03_new-apis-2: should be easier to repeat a string", () => {
 
 test("03_new-apis-3: should be able to take an array-like object and convert it into an array", () => {
   const obj = { length: 3, 0: "a", 1: "b", 2: "c" };
-  // això és encara més útil amb un NodeList com el retornat per document.querySelector
-  // crea una variable anomenada `result` i assigna-li una crida a Array.from
+  const result = Array.from(obj);
   expect(result).toEqual(["a", "b", "c"]);
 });
 
