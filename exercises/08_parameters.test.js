@@ -26,12 +26,11 @@ test("08_parameters-3: can trigger a function call", () => {
     return "Mercury";
   };
 
-  // Comprova que la funció per defecte només es crida quan és necessari
-  expect(triggerCount).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(getName("Aaron")).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(getName()).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(getName(undefined)).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(triggerCount).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
+  expect(triggerCount).toBe(0);
+  expect(getName("Aaron")).toBe("Aaron");
+  expect(getName()).toBe("Mercury");
+  expect(getName(undefined)).toBe("Mercury");
+  expect(triggerCount).toBe(2);
 });
 
 test("08_parameters-4: catch non-specified params", () => {
