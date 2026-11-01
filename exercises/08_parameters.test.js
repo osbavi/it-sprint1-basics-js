@@ -75,10 +75,7 @@ test("08_parameters-6: is an actual array, unlike arguments", () => {
 });
 
 test("08_parameters-7: it can default all arguments, optionally", () => {
-  // Modifica la signatura del mètode `myFunction` per permetre que
-  // tots els arguments siguin opcionals
-
-  const myFunction = ({ name, age, favoriteBand } = {}) => {
+  const myFunction = ({ name = null, age = null, favoriteBand = null } = {}) => {
     expect(name).toBeDefined();
     expect(age).toBeDefined();
     expect(favoriteBand).toBeDefined();
