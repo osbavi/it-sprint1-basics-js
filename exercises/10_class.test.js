@@ -65,9 +65,17 @@ test("10_class-4: can have static methods", () => {
 });
 
 test("10_class-5: can extend another class", () => {
-  // Crea una classe Animal
-  // Crea una classe Dog que extengui Animal
-  // Afegeix un mètode `sayName` a `Dog` que retorni el nom de la instància.
+  class Animal {
+    constructor(name) {
+      this.name = name;
+    }
+  }
+
+  class Dog extends Animal {
+    sayName() {
+      return `My name is: ${this.name}`;
+    }
+  }
 
   const dog = new Dog("Fido");
 
