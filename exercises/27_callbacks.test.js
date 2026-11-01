@@ -39,7 +39,7 @@ test("27_callbacks-3: Callbacks in asynchronous functions - wait and greet", (do
     expect(elapsed).toBeLessThan(2500);
     done();
   });
-}, 3000); // Timeout del test de 3 segons
+}, 3000);
 
 test("27_callbacks-4: Callbacks with arrays - process elements", () => {
   const processElements = (array, callback) => {
@@ -70,27 +70,15 @@ test("27_callbacks-5: Process string with callback - transform to uppercase", (d
   });
 });
 
-test("27_callbacks-5: Process string with callback - transform to uppercase", (done) => {
-  const processString = (/* ... */) => {
-    /* ... */
-  };
-
-  processString("hola món", (transformedString) => {
-    expect(transformedString).toBe("HOLA MÓN");
-    done();
-  });
-});
-
 test("27_callbacks-6: Chained callbacks - multiple transformations", () => {
-  // Crea funcions que demostrin callbacks encadenats
-  // Primer duplica un número, després suma 10, finalment mostra el resultat
-
   const double = (num, callback) => {
-    /* INTRODUEIX EL TEU CODI AQUÍ */
+    const result = num * 2;
+    callback(result);
   };
 
   const addTen = (num, callback) => {
-    /* INTRODUEIX EL TEU CODI AQUÍ */
+    const result = num + 10;
+    callback(result);
   };
 
   let finalResult;
@@ -101,5 +89,5 @@ test("27_callbacks-6: Chained callbacks - multiple transformations", () => {
     });
   });
 
-  expect(finalResult).toBe(20); // (5 * 2) + 10 = 20
+  expect(finalResult).toBe(20);
 });
