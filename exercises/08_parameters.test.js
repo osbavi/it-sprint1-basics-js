@@ -50,14 +50,11 @@ test("08_parameters-5: has a different length than `arguments`", () => {
     return others.length === arguments.length;
   };
 
-  // Comprova que la longitud dels paràmetres rest és diferent de `arguments`
-  expect(resty()).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(resty(1)).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(resty(1, 2)).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(resty(1, 2, 3)).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(
-    resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10),
-  ).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
+  expect(resty()).toBe(true);
+  expect(resty(1)).toBe(false);
+  expect(resty(1, 2)).toBe(false);
+  expect(resty(1, 2, 3)).toBe(false);
+  expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10)).toBe(false);
 });
 
 test("08_parameters-6: is an actual array, unlike arguments", () => {
