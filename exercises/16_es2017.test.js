@@ -41,7 +41,9 @@ test("16_es2017-3: Object.values gets just the values of an object", () => {
       "Alex Danvers",
     ],
   };
-  // obté els valors de l'objecte show com un array
+
+  const result = Object.values(show);
+
   expect(result).toEqual([
     "Supergirl",
     1.2,
