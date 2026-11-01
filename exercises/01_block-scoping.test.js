@@ -25,8 +25,7 @@ test("01_scope-3: cannot modify the value of a `const` variable", () => {
 
 test("01_scope-4: is trapped inside of an `if` statement", () => {
   if (true) {
-    // Canvia `var` a `let`, perquè b estigui limitat dins de l\'if
-    var b = 1;
+    let b = 1;
   }
   expect(() => noop(b)).toThrow("b is not defined");
 });
