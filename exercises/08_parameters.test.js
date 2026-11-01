@@ -67,15 +67,11 @@ test("08_parameters-6: is an actual array, unlike arguments", () => {
   const args = argy(1, 2, 3);
   const rests = resty(1, 2, 3);
 
-  // Comprova que els paràmetres rest (`...args`) són un array real, a diferència de `arguments`.
-  // Recorda que `arguments` només existeix en funcions tradicionals.
-  expect(
-    Object.getPrototypeOf(args) === Object.getPrototypeOf(rests),
-  ).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(args.splice).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(Object.getPrototypeOf(rests)).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
+  expect(Object.getPrototypeOf(args) === Object.getPrototypeOf(rests)).toBe(false);
+  expect(args.splice).toBe(undefined);
+  expect(Object.getPrototypeOf(rests)).toBe(Array.prototype);
   expect(rests.splice).toBeDefined();
-  expect(rests.splice).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
+  expect(rests.splice).toBe(Array.prototype.splice);
 });
 
 test("08_parameters-7: it can default all arguments, optionally", () => {
