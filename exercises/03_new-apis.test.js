@@ -18,8 +18,8 @@ test("03_new-apis-3: should be able to take an array-like object and convert it 
 
 test("03_new-apis-4: should be easier to fill an array with values", () => {
   const originalArray = new Array(5);
-  // crea una variable anomenada `result` i assigna-li un array omplert amb 3s excepte el primer element
-  expect(result).toEqual([, 3, 3, 3, 3]); // eslint-disable-line no-sparse-arrays
+  const result = originalArray.fill(3, 1);
+  expect(result).toEqual([, 3, 3, 3, 3]);
 });
 
 test("03_new-apis-5: should be easy to copy properties from one object to another", () => {
