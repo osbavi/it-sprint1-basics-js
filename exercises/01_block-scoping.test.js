@@ -32,10 +32,7 @@ test("01_scope-4: is trapped inside of an `if` statement", () => {
 
 test("01_scope-5: can't redeclare using the same name", () => {
   function doLoop() {
-    // Canvia el comptador del bucle a `let` perquè estigui limitat dins del bucle i no es pugui retornar.
-    for (var i = 0; i < 10; i++) {
-      /* eslint no-empty:"off" */
-    }
+    for (let i = 0; i < 10; i++) {}
     return i;
   }
 
