@@ -19,7 +19,6 @@ test("06_modules-1: can specify what to import, to only retain pieces of the imp
 });
 
 test("06_modules-2: can import from my node_modules", () => {
-  // import `lodash`
   expect(_).toBeDefined();
 });
 
@@ -28,8 +27,6 @@ test("06_modules-3: can import Mathy", () => {
 });
 
 test("06_modules-4: can specify what to import, to only retain pieces of the import", () => {
-  // El mòdul Mathy ja està importat amb `import * as Mathy`.
-  // Ara importa també la funció `add` utilitzant named imports per poder utilitzar-la directament sense accedir a `Mathy`.
   expect(add(1, 2)).toBe(3);
 });
 
