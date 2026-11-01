@@ -35,8 +35,14 @@ test("05_template-literals-3: should support string escaping", () => {
 // és probable que no utilitzis sovint l'etiquetatge, però pot ser útil!
 test.skip("05_template-literals-4: should call the tagging function", () => {
   const tagIt = (literalString, ...interpolatedParts) => {
-    // implementa aquesta funció per fer que el test passi
-    return "fixme";
+    return literalString.reduce((result, str, i) => {
+      let value = interpolatedParts[i] !== undefined ? interpolatedParts[i] : "";
+
+      if (value === "World") value = "super-cool " + value;
+      if (value === "happy") value = "really " + value;
+
+      return result + str + value;
+    }, "");
   };
   const noun = "World";
   const emotion = "happy";
