@@ -13,8 +13,11 @@ test("10_class-1: has a constructor for initialization", () => {
 });
 
 test("10_class-2: constructor can have default param values", () => {
-  // Crea una classe Animal amb un constructor
-  // Fes que la classe tingui un valor per defecte (utilitzant paràmetres per defecte) per al nom: 'Honey Badger'
+  class Animal {
+    constructor(name = "Honey Badger") {
+      this.name = name;
+    }
+  }
 
   const animal = new Animal();
   const dog = new Animal("Dog");
