@@ -17,8 +17,7 @@ test("16_es2016-2: array.includes can be used to determine whether an item exist
 
 test("16_es2017-1: String.prototype.padStart saves us from left-pad-gate", () => {
   const originalString = "Worlds Finest";
-  // crida a padStart en aquesta cadena per fer que el test passi
-  const result = originalString;
+  const result = originalString.padStart(17);
   expect(result).toBe("    Worlds Finest");
 });
 
