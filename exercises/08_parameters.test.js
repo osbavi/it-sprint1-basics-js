@@ -36,14 +36,13 @@ test("08_parameters-3: can trigger a function call", () => {
 test("08_parameters-4: catch non-specified params", () => {
   const resty = (first, second, ...others) => others;
 
-  // Comprova que els paràmetres rest contenen els arguments no especificats
-  expect(resty().length).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(resty(1).length).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(resty(1, 2).length).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(resty(1, 2, 3).length).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
-  expect(
-    resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length,
-  ).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/);
+  expect(resty().length).toBe(0);
+  expect(resty(1).length).toBe(0);
+  expect(resty(1, 2).length).toBe(0);
+  expect(resty(1, 2, 3).length).toBe(1);
+  expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length).toBe(
+    8,
+  );
 });
 
 test("08_parameters-5: has a different length than `arguments`", () => {
