@@ -45,22 +45,25 @@ test("02_arrow-4: pot fer que les cadenes de filtres d'arrays siguin més maneja
     { type: "CD", name: "JT Best Hits", price: 2.25, qty: 6 },
   ];
 
-  // El següent codi funciona correctament amb funcions tradicionals i el test ja passa.
-  // Refactoritza totes les funcions utilitzant funcions fletxa per fer el codi més concís i llegible, assegurant-te que el test segueix passant.
-
-  const shoppingList = data
+  const shoppingListOriginal = data
     .filter(function (d) {
       return d.type != "Widget";
-    }) // Elimina els Widgets
+    })
     .filter(function (d) {
       return d.price < 5;
-    }) // Troba només els elements restants amb preu < 5
+    })
     .sort(function (a, b) {
       return a.qty - b.qty;
-    }) // Ordena per quantitat, descendent
+    })
     .map(function (d) {
       return d.name;
-    }); // Extreu només el nom de cada element
+    });
+
+  const shoppingList = data
+    .filter((d) => d.type != "Widget")
+    .filter((d) => d.price < 5)
+    .sort((a, b) => a.qty - b.qty)
+    .map((d) => d.name);
 
   expect(shoppingList.shift()).toBe("Bacon");
   expect(shoppingList.shift()).toBe("JT Best Hits");
