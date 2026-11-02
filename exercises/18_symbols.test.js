@@ -9,14 +9,13 @@ test("18_symbols-2: giving a symbol a description", () => {
 });
 
 test("18_symbols-3: symbols are unique", () => {
-  // Comprova que els símbols són únics
   const s1 = Symbol();
   const s2 = Symbol();
-  expect(s1 === s2).toBe(/* introdueix la teva resposta aquí */);
+  expect(s1 === s2).toBe(false);
 
   const s3 = Symbol("I am a symbol");
   const s4 = Symbol("I am a symbol");
-  expect(s3 === s4).toBe(/* introdueix la teva resposta aquí */);
+  expect(s3 === s4).toBe(false);
 });
 
 test("18_symbols-4: symbols on objects", () => {
