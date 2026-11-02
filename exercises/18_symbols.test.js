@@ -4,8 +4,7 @@ test("18_symbols-1: creating symbols", () => {
 });
 
 test("18_symbols-2: giving a symbol a description", () => {
-  // Crea un símbol amb una descripció
-  const symbol = Symbol(); // dona-li una etiqueta
+  const symbol = Symbol("use the force");
   expect(String(symbol)).toBe("Symbol(use the force)");
 });
 
