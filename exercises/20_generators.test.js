@@ -27,11 +27,9 @@ test("20_generators-2: can be iterated over", () => {
 
   let sum = 0;
 
-  // ATENCIÓ, AIXÒ ÉS BLOQUEJANT/SINCRÒNIC!
-  // Els generadors no són async/await, aquests poden estar a ES2016
   for (let even of giveMeOneEvenNumber()) {
     sum = sum + even;
   }
 
-  expect(sum).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */);
+  expect(sum).toBe(20);
 });
