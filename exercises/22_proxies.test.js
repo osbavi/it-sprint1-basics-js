@@ -30,7 +30,35 @@ test("22_proxies-1: can wrap an existing object", () => {
 test("22_proxies-2: handler can intercept gets, sets, and deletes", () => {
   const character = getCharacter();
 
-  const handler = {};
+  const handler = {
+    get(target, prop) {
+      // Soporte para paths profundos separados por puntos ("classes.1.teacher")
+      if (typeof prop === "string" && prop.includes(".")) {
+        return prop.split(".").reduce((obj, key) => obj?.[key], target);
+      }
+      return target[prop];
+    },
+    set(target, prop, value) {
+      if (typeof prop === "string" && prop.includes(".")) {
+        const parts = prop.split(".");
+        const lastKey = parts.pop();
+        const nestedTarget = parts.reduce((obj, key) => obj[key], target);
+        nestedTarget[lastKey] = value;
+      } else {
+        target[prop] = value;
+      }
+      return true;
+    },
+    deleteProperty(target, prop) {
+      // Protegemos la propiedad '_id' impidiendo su eliminación
+      if (prop === "_id") {
+        return true;
+      }
+      delete target[prop];
+      return true;
+    },
+  };
+
   const proxy = new Proxy(character, handler);
 
   // Interactua amb el proxy
