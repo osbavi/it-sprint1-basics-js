@@ -112,7 +112,15 @@ test.skip("22_proxies-4: can be used to do some fancy stuff with arrays", () => 
     "Pigwidgeon",
   ];
 
-  const handler = {};
+  const handler = {
+    get(target, prop) {
+      let index = Number(prop);
+      if (!isNaN(index) && index < 0) {
+        index = target.length + index;
+      }
+      return target[index];
+    },
+  };
   const proxy = new Proxy(characters, handler);
   // Comprova que el proxy permet accedir a elements de l'array amb índexs positius i negatius
   expect(proxy[0]).toBe("Harry Potter");
