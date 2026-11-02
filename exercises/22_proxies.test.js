@@ -78,7 +78,7 @@ test("22_proxies-2: handler can intercept gets, sets, and deletes", () => {
 
 //////// EXTRA CREDIT ////////
 
-test.skip("22_proxies-3: can intercept function calls", () => {
+test("22_proxies-3: can intercept function calls", () => {
   const character = getCharacter();
 
   const handler = {
@@ -101,7 +101,7 @@ test.skip("22_proxies-3: can intercept function calls", () => {
   expect(character.getTeachers()).toEqual(["Sybill Trelawney", "Dolores Umbridge"]);
 });
 
-test.skip("22_proxies-4: can be used to do some fancy stuff with arrays", () => {
+test("22_proxies-4: can be used to do some fancy stuff with arrays", () => {
   const characters = [
     "Harry Potter",
     "Ron Weasly",
