@@ -20,7 +20,12 @@ test("18_symbols-3: symbols are unique", () => {
 
 test("18_symbols-4: symbols on objects", () => {
   const symbol = Symbol("metadata");
-  // Crea un objecte anomenat `game` que faci que aquest test passi
+
+  const game = {
+    name: "The Legend of Zelda",
+    releaseDate: "February 21, 1986",
+    [symbol]: { fans: "about a billion" },
+  };
 
   expect(JSON.parse(JSON.stringify(game))).toEqual({
     name: "The Legend of Zelda",
