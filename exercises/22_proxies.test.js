@@ -81,7 +81,16 @@ test("22_proxies-2: handler can intercept gets, sets, and deletes", () => {
 test.skip("22_proxies-3: can intercept function calls", () => {
   const character = getCharacter();
 
-  const handler = {};
+  const handler = {
+    apply(target, thisArg, argumentsList) {
+      const result = target.apply(thisArg, argumentsList);
+      if (typeof result === "string") {
+        // Sanitizamos el string removiendo los datos sensibles del character original
+        return result.replace(thisArg.password, "").replace(thisArg._id, "");
+      }
+      return result;
+    },
+  };
   // Tingues en compte que `apply` només funciona per a proxies en funcions!
   character.greet = new Proxy(character.greet, handler);
   character.getTeachers = new Proxy(character.getTeachers, handler);
